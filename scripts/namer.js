@@ -8,14 +8,20 @@ module.exports = Namer = function(text){
     name.ctx.fillStyle = "#fff";
     name.ctx.fillRect(0, 0, w, h);
 
-	name.ctx.font = "bold 284px sans-serif";
 	name.ctx.textAlign = "center";
 	name.ctx.textBaseline = "middle";
 
+    let size = 284;
+    name.ctx.font = "bold " + size + "px sans-serif";
+
+	let tw = name.ctx.measureText(text).width;
+	while(tw > w){
+        name.ctx.font = "bold " + (--size) + "px sans-serif";
+        tw = name.ctx.measureText(text).width;
+    }
+
 	name.ctx.fillStyle = "#000";
 	name.ctx.fillText(text, w / 2, h / 2);
-
-	document.body.appendChild(name.canvas);
 
 	return (x, y) => {
 		const d = name.ctx.getImageData(x, y, 1, 1).data;

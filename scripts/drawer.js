@@ -15,7 +15,7 @@ module.exports = Drawer = function(){
 		gray: [75, 75, 75, 0.1]
 	};
 	const limit = 255 / 2;
-	const speed = 1;//Math.min(Math.random() * 500, 50);
+	const speed = Math.min(Math.random() * 500, 50);
 
 	const heartsPrCycle = 25;
 	const hearts = [];
