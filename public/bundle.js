@@ -103,7 +103,11 @@ module.exports = Heart = function(x, y, r, g, b, a){
     };
 };
 },{}],4:[function(require,module,exports){
-window.addEventListener("load", require("./drawer"));
+window.addEventListener("load", () => {
+    require("./drawer")();
+
+    window.addEventListener("hashchange", () => window.location.reload());
+});
 },{"./drawer":2}],5:[function(require,module,exports){
 module.exports = Namer = function(text){
 	const Canvas = require("./canvas");
