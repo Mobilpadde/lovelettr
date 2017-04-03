@@ -1,0 +1,20 @@
+{
+  "name": "lovelettr",
+  "version": "0.0.1",
+  "description": "Send love letters to the people you love the most",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify scripts/main.js > public/bundle.js | node-sass styles/main.sass public/bundle.min.css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "author": "Mads Cordes",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "node-sass": "^4.5.2"
+  }
+}
