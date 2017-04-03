@@ -19,7 +19,7 @@ module.exports = Heart = function(x, y, r, g, b, a){
             ctx.rect(0, 0, radius, radius);
             ctx.restore();
 
-            ctx.fillStyle = "rgba(" + r + ", " + g + ", " + b + ", " + a + ")";
+            ctx.fillStyle = "rgba(" + r + ", " + g + ", " + b + ", " + Math.min(a, radius / max) + ")";
             ctx.fill();
 
             if(radius < max)
